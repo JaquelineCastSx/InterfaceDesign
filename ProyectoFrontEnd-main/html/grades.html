@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/indexStyles.css">
+    <title>Grades</title>
+</head>
+
+<body>
+
+    <body>
+        <nav class="navbar navbar-expand-lg align-top">
+            <div class="container-fluid pb-1">
+                <a class="navbar-brand " href="/html/classes.html">
+                    <img src="../logo/logo.png" alt="LogoGrowCloudSolutions" width="50%">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse m-auto" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active px-lg-4" aria-current="page" href="/html/classes.html">Home</a>
+                        </li>
+                       
+                        <li class="nav-item ps-3">
+                            <a class="nav-link" aria-current="page" href="../index.html">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12 col-md-8">
+                    <h1>Welcome to your grades</h1>
+                </div>
+                <div class="col-12 col-md-4">
+                    <button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" style="background-color: #416788;"><!--Esto es lo que desencadena y abre el modal-->
+                        <i class="bi bi-plus-circle-fill"></i> Add New Grade
+                    </button>
+                </div>
+            </div>
+        <form>
+            <div id="SearchDiv" class="my-2">
+            <label for="searchStudent"  class="mx-5">Search Student:</label>
+            <input type="text" class="Sstudent">
+            <button id="enter" type="button" class="mx-5">Search</button>
+            </div>
+        </form>
+
+        
+
+        
+            <div class="row">
+                <div class='col-2 p-3'>
+                    <h3>Student Name</h3>
+                </div>
+                <div class='col-2 p-3'>
+                    <h3>1P</h3>
+                </div>
+                <div class='col-2 p-3'>
+                    <h3>2P</h3>
+                </div>
+                <div class='col-2 p-3'>
+                    <h3>3P</h3>
+                </div>
+                <div class='col-2 p-3'>
+                    <h3>Edit Grade</h3>
+                </div>
+                <div class='col-2 p-3'>
+                    <h3>Delete Grade</h3>
+                </div>
+            </div>
+            <div id="listaTareas"></div>
+        </div>
+    
+    
+        <!-- Add Grade Modal -->
+        <form name="formulario" id="formulario" action="index.html" method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #97ABC3;">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">New Grade</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body"> <!--Contenido de la ventana de Modal-->
+    
+                            <label for="nombre">Student Name</label>
+                            <input required name="nombre" id="nombre" type="text"  class="form-control">
+    
+                            <label for="fecha">1P</label>
+                            <input required name="fecha" id="fecha" type="number" class="form-control">
+    
+    
+                            <label for="descripcion">2P:</label>
+                            <input name="descripcion" id="descripcion" type="number" class="form-control"
+                                ></input>
+                                <label for="TercerP">3P:</label>
+                            <input name="TercerP" id="TercerP" type="number" class="form-control"
+                                ></input>
+                        </div>
+    
+                        <div class="modal-footer">
+                            <div class="col-12 col-md-6 offset-md-3">
+                                <div class="row">
+                                    <div class="col-6  py-2">
+                            <button type="button" class="btn btn-secondary" id="btnCerrar" data-bs-dismiss="modal" style="background-color: #416788;">Close</button>
+                        </div>
+                        <div class="col-6  py-2">
+                            <button type="submit" class="btn btn-primary" id="btnGuardar" style="background-color: #BE8A60;">Save</button>
+                        </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!--Formulario Editar-->
+        <form name="formularioEditar" id="formularioEditar" action="index.html" method="post">
+            <div class="modal fade" id="exampleModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color: #97ABC3;">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Grade</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+        
+                            <label for="nombre">Name:</label>
+                            <input type="text" required class="form-control" name="nombreEditar" id="nombreEditar">
+        
+        
+                            <label for="fecha">1P</label>
+                            <input type="number" required class="form-control" name="fechaEditar" id="fechaEditar">
+        
+        
+                            <label for="descripcion">2P</label>
+                            <input type="number" class="form-control" id="descripcionEditar" name="descripcionEditar">
+                            
+                            <label for="3P">3P</label>
+                            <input type="number" class="form-control" id="3PEditar" name="3PEditar">
+                            
+        
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" class="btn btn-primary mx-5" id="btnGuardar"
+                                data-bs-dismiss="modal" style="background-color: #BE8A60;">Save Changes</button>
+                                <button type="button" class="btn btn-secondary mx-5 px-5" id="btnCerrar"
+                                data-bs-dismiss="modal" style="background-color: #416788;">Close</button>
+                        </div>
+                    </div>
+        
+        
+        </form>
+
+          
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+
+
+
+
+
+            <script src="../js/app.js"></script>
+
+    </body>
+
+</html>

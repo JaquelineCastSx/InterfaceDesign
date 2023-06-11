@@ -1,0 +1,77 @@
+h1 {
+    
+    font-family: Monospace  ;
+}
+
+.navbar{
+background-color: #416788;
+}
+
+
+h3{
+    
+    color: #2E4960;
+}
+
+
+.card-sl {
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 #BE8A60, 0 4px 10px 0 #BE8A60;
+    background-color: #f7f7f7;
+}
+#classesid {
+    background-color: #f7f7f7;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px; 
+    
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.card-text {
+    padding: 10px 15px;
+    background: #fff;
+    font-size: 14px;
+    color: #636262;
+}
+
+
+.textoAlineado{
+    word-wrap: break-word; /*Esto es para que la palabra no se salga del cuadro de texto*/
+    /*overflow: y hidden; Esto es para que las palabras restantes se puedan ver con u desplazmiento de barra lateral, no es muy recomendable*/
+}
+
+.formularioAD:hover {
+    cursor: poin;
+}
+
+#SearchDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.Sstudent{
+   
+  
+    flex: auto;
+    align-items: center;
+    /* width: 50%; */
+    /* size: 1000px; */
+    padding: 5px;
+    border-radius: 20px ;
+    text-align: center;
+    background-color: transparent;
+   
+    
+    padding-left: 20px;
+    
+    
+
+}
